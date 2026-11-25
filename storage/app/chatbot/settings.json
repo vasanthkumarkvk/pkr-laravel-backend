@@ -1,0 +1,325 @@
+{
+  "bot_name": "PKR Assistant",
+  "company_name": "PKR Estates",
+  "tagline": "An Affordable Home Company",
+  "working_hours": "Mon-Sat 10AM - 6PM",
+  "greeting": {
+    "en": ["Hello! 👋 How can I help you today?", "Hi there! Looking for a property?"],
+    "tanglish": ["Vanakkam! 👋 Enna help venum?", "Hi bro! Enna vishesham?"]
+  },
+  "menu": {
+    "en": "1. Gurudev\n2. Privana\n3. Contact Us\n4. Site Visit",
+    "tanglish": "1. Gurudev\n2. Privana\n3. Contact\n4. Site Visit"
+  },
+  "menu_items": {
+    "1": "gurudev",
+    "2": "privana",
+    "3": "contact",
+    "4": "site_visit"
+  },
+  "patterns": [
+    {
+      "name": "date",
+      "regex": "/(date|today|naalaiku|inniku|date enna)/i",
+      "reply": {
+        "en": "Today is {current_day}, {current_date}.",
+        "tanglish": "Inniku {current_day}, {current_date}."
+      }
+    },
+    {
+      "name": "time",
+      "regex": "/(time|now|neram|mani)/i",
+      "reply": {
+        "en": "Current time is {current_time}.",
+        "tanglish": "Ippo time {current_time}."
+      }
+    }
+  ],
+  "personal_chat": [
+    {
+      "name": "how_are_you",
+      "keywords": ["epdi irukinga", "epdi iruka", "how are you", "how r u", "epdi irukingaa", "epdi irukingalan", "sugama", "soukyama", "epdi irukku"],
+      "reply": {
+        "en": ["I'm doing great! 😊 How about you?", "I'm good! How are you doing?"],
+        "tanglish": ["Naan nalla iruken bro! 😊 Neenga epdi irukinga?", "Naan super ah iruken! Neenga epdi irukinga?"]
+      }
+    },
+    {
+      "name": "im_fine",
+      "keywords": ["nalla iruken", "super ah iruken", "i am fine", "i'm fine", "good", "nalla iruku", "fine"],
+      "reply": {
+        "en": ["That's great! 😊 So, are you looking for a property?", "Awesome! How can I help you today?"],
+        "tanglish": ["Super bro! 😊 Property pathi kekkureengala?", "Nalla irukinga! Enna help venum?"]
+      }
+    },
+    {
+      "name": "saptiya",
+      "keywords": ["saptiya", "saaptiya", "sapdu", "food", "lunch", "dinner", "saptingala"],
+      "reply": {
+        "en": ["I'm a bot, I don't eat! 😄 But you should eat well.", "I'm always full of data! How about you?"],
+        "tanglish": ["Naan bot bro, enaku sapadu kidaayadhu! 😅 Neenga saptingala?", "Sapten nu solluvaen, aana enaku sapadu thevai illa. Neenga saptingala?"]
+      }
+    },
+    {
+      "name": "thanks",
+      "keywords": ["thanks", "thank you", "nandri", "romba nandri"],
+      "reply": {
+        "en": ["You're welcome! 😊", "Happy to help!"],
+        "tanglish": ["Welcome bro! 😊", "Paravala bro!"]
+      }
+    },
+    {
+      "name": "bye",
+      "keywords": ["bye", "goodbye", "see you", "poitu varen", "poga"],
+      "reply": {
+        "en": ["Goodbye! 👋 Have a great day!", "See you soon! 😊"],
+        "tanglish": ["Bye bro! 👋 Nalla irunga!", "Poitu vanga! 😊"]
+      }
+    }
+  ],
+
+
+"common_intents": [
+  {
+    "name": "greeting",
+    "keywords": ["hi", "hello", "hey", "hii", "hiii", "hiiii", "helo", "helloo", "hellooo", "hai", "vanakkam", "vanakam", "good morning", "good evening", "good afternoon", "hi bro", "hello bro"],
+    "reply": {
+      "en": ["Hello! 👋 How can I help you today?", "Hi there! Looking for a property?", "Hey! Welcome to PKR Estates."],
+      "tanglish": ["Vanakkam! 👋 Enna help venum?", "Hi bro! Enna vishesham?", "Vanakkam! Property pathi kekkureengala?"]
+    }
+  },
+  {
+    "name": "how_are_you",
+    "keywords": ["epdi irukinga", "epdi iruka", "how are you", "how r u", "epdi irukingaa", "epdi irukingalan", "sugama", "soukyama", "epdi irukku", "how do you do", "epdi irukinga bro", "nalla irukingala"],
+    "reply": {
+      "en": ["I'm doing great! 😊 How about you?", "I'm good! How are you doing?", "I'm super! 😊 How are you?"],
+      "tanglish": ["Naan nalla iruken bro! 😊 Neenga epdi irukinga?", "Naan super ah iruken! Neenga epdi irukinga?", "Naan nalla iruken! Neenga sugama?"]
+    }
+  },
+  {
+    "name": "im_fine",
+    "keywords": ["nalla iruken", "super ah iruken", "i am fine", "i'm fine", "good", "nalla iruku", "fine", "yes nalla iruka", "nalla iruken bro", "sugam", "soukyam", "yes fine", "yes good"],
+    "reply": {
+      "en": ["That's great! 😊 So, are you looking for a Villa or an Apartment? 🏡🏢", "Awesome! 😊 Are you looking for a property?"],
+      "tanglish": ["Super bro! 😊 Neenga Villa venuma illa Apartment venuma? 🏡🏢", "Nalla irukinga! 😊 Property pathi kekkureengala?"]
+    }
+  },
+  {
+    "name": "saptiya",
+    "keywords": ["saptiya", "saaptiya", "sapdu", "food", "lunch", "dinner", "saptingala", "saptiya bro", "saaptingala", "sapditingala"],
+    "reply": {
+      "en": ["I'm a bot, I don't eat! 😄 But you should eat well.", "I'm always full of data! How about you?", "I don't eat, but I hope you had a good meal! 😊"],
+      "tanglish": ["Naan bot bro, enaku sapadu kidaayadhu! 😅 Neenga saptingala?", "Sapten nu solluvaen, aana enaku sapadu thevai illa. Neenga saptingala?", "Naan bot, enaku sapadu thevai illa! 😄 Neenga saptingala?"]
+    }
+  },
+  {
+    "name": "thanks",
+    "keywords": ["thanks", "thank you", "nandri", "romba nandri", "thanks bro", "thank u", "thx", "super", "nice", "good job"],
+    "reply": {
+      "en": ["You're welcome! 😊", "Happy to help!", "Any time! 😊"],
+      "tanglish": ["Welcome bro! 😊", "Paravala bro!", "Edhukku bro, ellame ungaluku dhaan! 😊"]
+    }
+  },
+  {
+    "name": "bye",
+    "keywords": ["bye", "goodbye", "see you", "poitu varen", "poga", "bye bro", "see u", "tc", "take care", "poitu vanga"],
+    "reply": {
+      "en": ["Goodbye! 👋 Have a great day!", "See you soon! 😊", "Take care! 👋"],
+      "tanglish": ["Bye bro! 👋 Nalla irunga!", "Poitu vanga! 😊", "Take care bro! 👋"]
+    }
+  },
+  {
+    "name": "yes",
+    "keywords": ["yes", "aama", "aamaa", "sari", "seri", "yes bro", "aama bro", "sari bro", "aamaa bro"],
+    "reply": {
+      "en": "Great! 😊 How can I help you? Are you looking for a property?",
+      "tanglish": "Super! 😊 Enna help venum? Property pathi kekkureengala?"
+    }
+  },
+  {
+    "name": "no",
+    "keywords": ["no thanks", "illa", "vendam", "not interested", "no bro", "illa bro", "vendam bro", "not now"],
+    "reply": {
+      "en": "Okay! 😊 If you need any help, just ask.",
+      "tanglish": "Sari bro! 😊 Edhavadhu help venum na sollunga."
+    }
+  },
+  {
+    "name": "anything_else",
+    "keywords": ["vera ethum", "vera ethuvum", "vera enna", "innum enna", "innum ethum", "anything else", "what else", "more details", "vera details", "innum details", "vera ethum ilaya", "vera ethum ilayaa", "innum ethuvum", "vera vishesham", "vera information", "innum information", "vera vishesham enna", "vera ethavathu", "innum ethavathu"],
+    "reply": {
+      "en": "😊 *Sure! Here's what I can help you with:*\n\n• 💰 Price details\n• 📍 Location & connectivity\n• ✨ Amenities\n• 📐 Configurations (1/2/3 BHK)\n• 🏗️ Specifications\n• 📅 Site visit booking\n• 📞 Contact details\n\n👉 What would you like to know?",
+      "tanglish": "😊 *Kandippa! Intha details ellam naan tharen:*\n\n• 💰 Price details\n• 📍 Location & connectivity\n• ✨ Amenities\n• 📐 Configurations (1/2/3 BHK)\n• 🏗️ Specifications\n• 📅 Site visit booking\n• 📞 Contact details\n\n👉 Enna venum sollunga?"
+    }
+  },
+  {
+    "name": "apartment_or_plot",
+    "keywords": ["apartment", "apartments", "flat", "flats", "plot", "plots", "villa", "villas", "itha apartment", "itha plot", "apartment ha", "plot ha", "villa va", "apartment va", "enna type", "property type", "apartment ah", "plot ah", "villa ah"],
+    "reply": {
+      "en": "🏢 Ithu *Apartments* project. Namma PKR Estates la *Gurudev* (Guduvancheri) and *Privana* (Perungudi) nu rendu apartment projects irukku.\n\n👉 Enna project pathi theriyanum? (Gurudev or Privana)",
+      "tanglish": "🏢 Ithu *Apartments* project bro. Namma PKR Estates la *Gurudev* (Guduvancheri) and *Privana* (Perungudi) nu rendu apartment projects irukku.\n\n👉 Enna project pathi theriyanum? (Gurudev or Privana)"
+    }
+  },
+  {
+    "name": "project_list",
+    "keywords": ["projects", "project list", "enna projects", "projects iruka", "ethana projects", "projects enna", "project details", "projects pathi", "projects enna iruku", "total projects", "how many projects", "projects ethana", "projects sold", "projects available", "projects ethana iruku", "enna enna projects"],
+    "reply": {
+      "en": "🏢 *Our Projects:*\n\n1️⃣ *Gurudev* - Guduvancheri\n• 1 BHK & 2 BHK\n• Starting from ₹22 Lakhs\n\n2️⃣ *Privana* - Perungudi, OMR\n• 3 BHK & 4 BHK\n• Starting from ₹65 Lakhs\n\n👉 Which project would you like to know more about? (Type Gurudev or Privana)",
+      "tanglish": "🏢 *Namma Projects:*\n\n1️⃣ *Gurudev* - Guduvancheri\n• 1 BHK & 2 BHK\n• ₹22 லட்சம் la irundhu start\n\n2️⃣ *Privana* - Perungudi, OMR\n• 3 BHK & 4 BHK\n• ₹65 லட்சம் la irundhu start\n\n👉 Enna project pathi theriyanum? (Gurudev or Privana nu type pannunga)"
+    }
+  },
+  {
+    "name": "project_gurudev",
+    "keywords": ["gurudev", "guru", "gurudev project", "gurudev details", "gurudev pathi", "gurudev enna", "gurudev iruka"],
+    "reply": {
+      "en": "🏢 *Gurudev* by PKR Estates - Premium residential community in Guduvancheri, Chennai.\n\n✨ 90 thoughtfully crafted apartments\n🏗️ Stilt + 5 floors design\n🧘 100% Vaastu compliant\n🏫 Surrounded by IT companies, schools, colleges & hospitals\n\n📍 Location: Guduvancheri, near GST Road\n🏠 Configurations: 1 BHK & 2 BHK\n\n👉 Enna details venum? (price / location / amenities / specifications)",
+      "tanglish": "🏢 *Gurudev* by PKR Estates - Guduvancheri la irukura premium residential project.\n\n✨ 90 nalla design panna apartments\n🏗️ Stilt + 5 floors structure\n🧘 100% Vaastu compliant, zero dead space\n🏫 IT companies, schools, colleges, hospitals ellam pakkathula irukku\n\n📍 Location: Guduvancheri, GST Road pakkathula\n🏠 Configurations: 1 BHK & 2 BHK\n\n👉 Enna details venum? (price / location / amenities / specifications)"
+    }
+  },
+  {
+    "name": "project_privana",
+    "keywords": ["privana", "privana project", "privana details", "privana pathi", "privana enna", "privana iruka", "luxury apartment"],
+    "reply": {
+      "en": "🏢 *Privana* - Luxury apartments with premium finishes.\n\n📍 Perungudi, OMR\n🏠 3 BHK & 4 BHK\n\n👉 Enna details venum? (price / location / amenities)",
+      "tanglish": "🏢 *Privana* - Luxury apartments, premium finishes oda.\n\n📍 Perungudi, OMR\n🏠 3 BHK & 4 BHK\n\n👉 Enna details venum? (price / location / amenities)"
+    }
+  },
+  {
+    "name": "price",
+    "keywords": ["price", "cost", "rate", "how much", "enna price", "evlo", "vilai", "vilai enna", "price list", "rate card", "pricing", "amount", "low amount", "low price", "budget", "cheap", "affordable", "low cost", "rate enna", "cost enna", "evlo amount", "how much cost", "price enna", "rate evlo"],
+    "reply": {
+      "en": "💰 Price details for which project — *Gurudev* / *Privana*? Type the project name.",
+      "tanglish": "💰 Enna project price venum — *Gurudev* / *Privana*? Project name type pannunga."
+    }
+  },
+  {
+    "name": "location",
+    "keywords": ["location", "address", "place", "idam", "entha location", "enga iruku", "enga irukku", "location enna", "address enna", "where is"],
+    "reply": {
+      "en": "📍 Location of which project — *Gurudev* / *Privana*?",
+      "tanglish": "📍 Enna project location venum — *Gurudev* / *Privana*?"
+    }
+  },
+  {
+    "name": "amenities",
+    "keywords": ["amenities", "amenity", "facilities", "facility", "features", "gym", "pool", "swimming", "park", "play area", "enna facilities", "facilities enna", "amenities enna"],
+    "reply": {
+      "en": "✨ Amenities of which project — *Gurudev* / *Privana*?",
+      "tanglish": "✨ Enna project amenities venum — *Gurudev* / *Privana*?"
+    }
+  },
+  {
+    "name": "configuration",
+    "keywords": ["configuration", "bhk", "1bhk", "2bhk", "3bhk", "size", "sqft", "sq ft", "area", "layout", "floor plan", "floorplan", "plan", "bhk details", "enna bhk", "size enna", "sqft enna", "1 bhk", "2 bhk", "3 bhk"],
+    "reply": {
+      "en": "📐 Configuration of which project — *Gurudev* / *Privana*?",
+      "tanglish": "📐 Enna project BHK details venum — *Gurudev* / *Privana*?"
+    }
+  },
+  {
+    "name": "specifications",
+    "keywords": ["specification", "specifications", "specs", "spec", "structure", "flooring", "kitchen details", "bathroom details", "doors", "windows", "electrical"],
+    "reply": {
+      "en": "🏗️ Specifications of which project — *Gurudev* / *Privana*?",
+      "tanglish": "🏗️ Enna project specifications venum — *Gurudev* / *Privana*?"
+    }
+  },
+  {
+    "name": "booking_process",
+    "keywords": ["book", "booking", "how to book", "advance", "registration", "booking epdi", "booking process", "book pannanum", "booking pannanum", "advance evlo", "registration epdi"],
+    "reply": {
+      "en": "📝 *Booking Process:*\n\n1️⃣ Site visit\n2️⃣ Unit selection\n3️⃣ Pay booking advance\n4️⃣ Agreement & Registration\n\n📞 Call +91 93810 55555 to start your booking!",
+      "tanglish": "📝 *Booking Process:*\n\n1️⃣ Site visit pannunga\n2️⃣ Unit select pannunga\n3️⃣ Booking advance kattunga\n4️⃣ Agreement & Registration\n\n📞 Booking start panna +91 93810 55555 ku call pannunga!"
+    }
+  },
+{
+  "name": "site_visit",
+  "keywords": ["site visit", "visit", "appointment", "see project", "visit pannanum", "site visit pannanum", "visit epdi", "appointment venum", "project paakanum", "visit panna"],
+  "reply": {
+    "en": "📅 *Site Visit Booking:*\n\nSuper! Namma site visit arrange pannalam. 😊\n\n👉 Neenga site ku varigala? Illa car pickup venuma?\n\n1️⃣ Naan vanthen (I will come)\n2️⃣ Car arrange pannunga (Need car pickup)\n3️⃣ Date & Time sollunga (Tell me date/time)\n\n📞 Or call +91 93810 55555 directly.",
+    "tanglish": "📅 *Site Visit Booking:*\n\nSuper! Namma site visit arrange pannalam. 😊\n\n👉 Neenga site ku varigala? Illa car pickup venuma?\n\n1️⃣ Naan vanthen (I will come)\n2️⃣ Car arrange pannunga (Need car pickup)\n3️⃣ Date & Time sollunga (Tell me date/time)\n\n📞 Illa direct ah +91 93810 55555 ku call pannunga."
+  }
+}
+  
+  ,
+  {
+    "name": "loan_emi",
+    "keywords": ["loan", "emi", "home loan", "bank", "finance", "mortgage", "loan iruka", "emi iruka", "bank loan", "loan kidaikuma", "emi epdi", "loan venum"],
+    "reply": {
+      "en": "🏦 *Home Loan & EMI:*\n\n✅ Loan assistance provided\n✅ All major banks tie-up\n✅ EMI options available\n\n📞 Call +91 93810 55555 for EMI calculation",
+      "tanglish": "🏦 *Home Loan & EMI:*\n\n✅ Loan help panrom\n✅ Major banks tie-up irukku\n✅ EMI option irukku\n\n📞 EMI calculation ku +91 93810 55555 ku call pannunga"
+    }
+  },
+  {
+    "name": "documents",
+    "keywords": ["brochure", "pdf", "document", "floor plan", "plan", "details", "brochure venum", "pdf venum", "document venum", "details anuppu", "plan anuppu", "brochure kidaikuma"],
+    "reply": {
+      "en": "📄 *Brochure & Floor Plans:*\n\nBrochure la ellam details irukku:\n• Floor plans (1BHK, 2BHK)\n• Specifications\n• Location map\n• Amenities\n\n📞 Call +91 93810 55555 to get brochure on WhatsApp!",
+      "tanglish": "📄 *Brochure & Floor Plans:*\n\nBrochure la ellam details irukku:\n• Floor plans (1BHK, 2BHK)\n• Specifications\n• Location map\n• Amenities\n\n📞 WhatsApp la brochure venum na +91 93810 55555 ku call pannunga!"
+    }
+  },
+  {
+    "name": "availability",
+    "keywords": ["available", "availability", "kidaikum", "kidaikuma", "units iruka", "flat iruka", "apartment iruka", "available ah", "kidaikuma bro", "iruka", "irukka"],
+    "reply": {
+      "en": "✅ Yes, units are available! Which project are you interested in? (Gurudev / Privana)",
+      "tanglish": "✅ Aama bro, units available irukku! Enna project venum? (Gurudev / Privana)"
+    }
+  },
+  {
+    "name": "offers",
+    "keywords": ["offer", "discount", "deal", "concession", "festival offer", "offer iruka", "discount iruka", "deal iruka", "offer enna", "discount enna"],
+    "reply": {
+      "en": "🎉 *Latest Offers:*\n\n✅ Festival offers available\n✅ Special discounts for early booking\n\n📞 Call +91 93810 55555 for current offers!",
+      "tanglish": "🎉 *Latest Offers:*\n\n✅ Festival offers irukku\n✅ Early booking ku special discount\n\n📞 Current offers ku +91 93810 55555 ku call pannunga!"
+    }
+  },
+  {
+    "name": "possession",
+    "keywords": ["possession", "ready", "completion", "handover", "eppo kuduppinga", "ready ah", "possession eppo", "handover eppo", "kuduthuduvanga", "completion eppo"],
+    "reply": {
+      "en": "🔑 *Possession Details:*\n\nGurudev - Contact for exact possession date\nPrivana - Contact for exact possession date\n\n📞 Call +91 93810 55555 for details!",
+      "tanglish": "🔑 *Possession Details:*\n\nGurudev - Exact date ku contact pannunga\nPrivana - Exact date ku contact pannunga\n\n📞 Details ku +91 93810 55555 ku call pannunga!"
+    }
+  },
+  {
+    "name": "contact",
+    "keywords": ["contact", "phone", "call", "whatsapp", "number", "mobile", "phone number", "contact number", "call pannunga", "number enna", "phone enna", "contact epdi"],
+    "reply": {
+      "en": "📞 *Contact PKR Estates:*\n\n📱 Call/WhatsApp: +91 93810 55555\n\n🏢 Corporate Office:\nFlat A10, Archana Castle\n4/23 Patrick Church Road\nSt.Thomas Mount, Chennai 600016\n\n🌐 www.pkrestates.com",
+      "tanglish": "📞 *PKR Estates Contact:*\n\n📱 Call/WhatsApp: +91 93810 55555\n\n🏢 Office:\nFlat A10, Archana Castle\n4/23 Patrick Church Road\nSt.Thomas Mount, Chennai 600016\n\n🌐 www.pkrestates.com"
+    }
+  },
+  {
+    "name": "about_company",
+    "keywords": ["pkr", "pkr estates", "pkr company", "pkr pathi", "pkr estates pathi", "company", "company pathi", "company enna", "ungaloda company", "about", "about pkr", "company details"],
+    "reply": {
+      "en": "🏢 *PKR Estates* - An Affordable Home Company.\n\n✅ Member of CREDAI Chennai & FAIRA\n🏗️ Building quality homes in Chennai\n📍 Corporate Office: St.Thomas Mount\n\n📞 Call +91 93810 55555",
+      "tanglish": "🏢 *PKR Estates* - Affordable Home Company.\n\n✅ CREDAI Chennai & FAIRA member\n🏗️ Chennai la quality homes build panrom\n📍 Office: St.Thomas Mount\n\n📞 Call +91 93810 55555"
+    }
+  },
+  {
+    "name": "ok_enna_panradhu",
+    "keywords": ["ok ipo enna panradhu", "ipo enna panradhu", "enna panradhu", "enna pananum", "next enna", "ippo enna", "ok enna", "enna next"],
+    "reply": {
+      "en": "😊 *Here's what we can do next:*\n\n1️⃣ Tell me which project you like (Gurudev / Privana)\n2️⃣ I'll share price, location, amenities\n3️⃣ Book a site visit\n4️⃣ Connect with our team\n\n👉 Enna venum sollunga?",
+      "tanglish": "😊 *Namma next ithu pannalam:*\n\n1️⃣ Enna project venum sollunga (Gurudev / Privana)\n2️⃣ Naan price, location, amenities share panren\n3️⃣ Site visit book pannalam\n4️⃣ Namma team kooda connect pannalam\n\n👉 Enna venum sollunga?"
+    }
+  },
+  {
+    "name": "pesa_matingala",
+    "keywords": ["vera ethum pesa matingala", "pesa matingala", "vera ethum", "vera pesa", "ethum pesa", "pesa matiya", "vera ethum solla"],
+    "reply": {
+      "en": "😊 Of course I can! Naan ellame pesuven. Enna venum sollunga?\n\n• Project details\n• Price\n• Location\n• Site visit\n• Contact",
+      "tanglish": "😊 Kandippa pesuven bro! Enna venum sollunga?\n\n• Project details\n• Price\n• Location\n• Site visit\n• Contact"
+    }
+  }
+]
+  
+  
+  ,
+  "fallback": {
+    "en": ["Sorry, I didn't understand. Can you rephrase? 🤔", "I'm not sure about that. Try asking about Gurudev or Privana."],
+    "tanglish": ["Puriyala bro, konjam vera maadhiri sollunga. 🤔", "Adhu enaku theriyala. Gurudev or Privana pathi kekkureengala?"]
+  }
+}
