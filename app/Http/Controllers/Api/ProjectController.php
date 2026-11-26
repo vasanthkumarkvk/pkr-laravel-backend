@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use App\Models\Project;
 use Illuminate\Http\Request;
@@ -208,5 +209,75 @@ class ProjectController extends Controller
         ]);
     }
 
+
+     /**
+     * Upload or Update Broucher
+     */
+    public function uploadBroucher(Request $request, $id)
+    {
+        // 1. Validation (PDF, JPG, PNG file mattum allow panrom, max 10MB)
+        $validator = Validator::make($request->all(), [
+            'broucher' => 'required|file|mimes:pdf,jpg,jpeg,png', 
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
+
+        $project = Project::find($id);
+
+        if (!$project) {
+            return response()->json(['message' => 'Project not found'], 404);
+        }
+
+        if ($request->hasFile('broucher')) {
+            
+            // 2. Pazhaya file iruntha delete pannu
+            if ($project->broucher && Storage::disk('public')->exists($project->broucher)) {
+                Storage::disk('public')->delete($project->broucher);
+            }
+
+            // 3. Puthu file ah store pannu (storage/app/public/projects/brouchers/ la save aagum)
+            $filePath = $request->file('broucher')->store('projects/brouchers', 'public');
+
+            // 4. DB la update pannu
+            $project->broucher = $filePath;
+            $project->save();
+
+            return response()->json([
+                'message' => 'Broucher uploaded successfully',
+                'broucher_url' => asset('storage/' . $filePath), // Full URL return panrom
+                'data' => $project
+            ], 200);
+        }
+
+        return response()->json(['message' => 'No file uploaded'], 400);
+    }
+
+    /**
+     * Delete Broucher
+     */
+    public function deleteBroucher($id)
+    {
+        $project = Project::find($id);
+
+        if (!$project) {
+            return response()->json(['message' => 'Project not found'], 404);
+        }
+
+        // 1. File ah storage la irunthu delete pannu
+        if ($project->broucher && Storage::disk('public')->exists($project->broucher)) {
+            Storage::disk('public')->delete($project->broucher);
+        }
+
+        // 2. DB la NULL ah set pannu
+        $project->broucher = null;
+        $project->save();
+
+        return response()->json([
+            'message' => 'Broucher deleted successfully',
+            'data' => $project
+        ], 200);
+    }
     
 }

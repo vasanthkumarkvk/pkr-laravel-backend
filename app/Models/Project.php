@@ -16,7 +16,8 @@ class Project extends Model
         'thumbnail_image', 
         'desktop_banner', 
         'mobile_banner',
-        'gallery_title'
+        'gallery_title',
+        'broucher'
 
     ];
 

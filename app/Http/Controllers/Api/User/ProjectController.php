@@ -61,5 +61,47 @@ class ProjectController extends Controller
             'data' => $projects
         ], 200);
     }
+
+
+
+
+    /**
+     * 2. Single Project Details API
+     * Fetches a single project with all relationships
+     */
+    public function show($id)
+    {
+        $project = Project::with([
+            'detail',
+            'amenity.details', 
+            'galleries',
+            'layoutHeader',
+            'layouts',
+            'pricingHeader',
+            'pricings',
+            'threeSixty',
+            'connectivity'
+        ])->find($id);
+
+        if (!$project) {
+            return response()->json([
+                'status' => false, 
+                'message' => 'Project not found'
+            ], 404);
+        }
+
+        // --- BROUCHER LOGIC ---
+        // DB la path mattum irukum (e.g., projects/brouchers/abc.pdf). 
+        // Frontend la direct open panna full URL thevai. So namma oru extra field add panrom.
+        
+        // Note: Ithu DB la save aagathu, just response la mattum add aagum.
+        $project->broucher_url = $project->broucher ? asset('storage/' . $project->broucher) : null;
+
+        return response()->json([
+            'status' => true, 
+            'message' => 'Project details fetched successfully',
+            'data' => $project
+        ], 200);
+    }
  
 }

@@ -59,7 +59,7 @@ Route::prefix('home')->group(function () {
         Route::delete('/banners/{index}', [HomeController::class, 'deleteBanner']);
         });
 
-        Route::prefix('projects')->group(function () {
+Route::prefix('projects')->group(function () {
         // 1. Create Project (Empty ah)
         Route::post('/create', [ProjectController::class, 'createProject']);
         // 2. Get All Projects
@@ -130,6 +130,11 @@ Route::prefix('home')->group(function () {
         // Image Specific Routes
         Route::post('/cta/edit-image/{project_id}', [CtaBannerController::class, 'updateImage']);
         Route::delete('/cta/delete-image/{project_id}', [CtaBannerController::class, 'deleteImage']);
+          // Broucher Upload / Update Route (Edit ah ithuve use pannikalam)
+        Route::post('/broucher/upload/{id}', [ProjectController::class, 'uploadBroucher']); 
+        
+        // Broucher Delete Route
+        Route::delete('/broucher/delete/{id}', [ProjectController::class, 'deleteBroucher']);
         });
 
 Route::prefix('blogs')->group(function () {
@@ -161,7 +166,7 @@ Route::prefix('projects/countdown')->group(function () {
          // 👇 Project Showcase Routes
 Route::prefix('projects')->group(function () {
         Route::get('/list', [UserProjectController::class, 'index']);
-        Route::get('/userside-details/{id}', [UserProjectController::class, 'show']);
+        Route::get('/details/{id}', [UserProjectController::class, 'show']);
         Route::get('/navbar', [UserProjectController::class, 'getNavbarProjects']); // 👈 Navbar API
         Route::get('/countdown/{project_id}', [UserProjectCountdownController::class, 'show']);
 
